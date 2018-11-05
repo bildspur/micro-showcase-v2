@@ -17,6 +17,7 @@ class Tube {
         uint8_t getId(),
                 getAddress(),
                 getChannelNum();
+    
 };
 
 #endif //TUBE_H
