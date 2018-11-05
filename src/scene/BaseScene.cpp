@@ -4,6 +4,6 @@
 
 #include "BaseScene.h"
 
-BaseScene::BaseScene(const char *name) {
-    this->name = *name;
-}
+BaseScene::BaseScene() {};
+
+void BaseScene::render(Tube Tube) {};

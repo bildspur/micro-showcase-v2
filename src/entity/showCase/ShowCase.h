@@ -13,9 +13,9 @@
 
 class ShowCase {
         std::vector<Tube> Tubes;
-        BaseScene ActiveScene;
+        BaseScene* ActiveScene;
     public:
-        ShowCase(uint8_t, uint8_t, BaseScene);
+        ShowCase(uint8_t, uint8_t, BaseScene*);
         void render();
         std::vector<Tube> getTubes(); 
 };

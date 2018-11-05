@@ -6,11 +6,12 @@
 #ifndef BaseScene_H
 #define BaseScene_H
 
+#include "entity/tube/Tube.h"
+
 class BaseScene {
-        const char *name;
     public:
-        BaseScene(const char);
-        virtual void renderTube();
+        explicit BaseScene();
+        virtual void render(Tube);
 };
 
  #endif //BaseScene_H
