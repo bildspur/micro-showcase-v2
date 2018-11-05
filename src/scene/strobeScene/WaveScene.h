@@ -3,8 +3,8 @@
 //Date:         05.11.2018
 //Description:  StrobeScene defines a lightshow intendet for testing
 
-#ifndef StrobeScene_H
-#define StrobeScene_H
+#ifndef WaveScene_H
+#define WaveScene_H
 
 #include <Arduino.h>
 #include <ESPDMX.h>
@@ -13,7 +13,7 @@
 class StrobeScene : public BaseScene {
     public:
         explicit StrobeScene();
-        void render(Tube Tube) override;
+        void render(std::vector<Tube>) override;
 };
 
-#endif //StrobeScene_H
+#endif //WaveScene_H

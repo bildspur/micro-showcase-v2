@@ -11,16 +11,16 @@ Tube::Tube(uint8_t id, uint8_t address, uint8_t numChannels) {
 };
 
 //Id
-inline uint8_t Tube::getId() {
+uint8_t Tube::getId() {
     return this->id;
 };
 
 //Address
-inline uint8_t Tube::getAddress() {
+uint8_t Tube::getAddress() {
     return this->address;
 };
 
 //Channel Count
-inline uint8_t Tube::getChannelNum() {
+uint8_t Tube::getChannelNum() {
     return this->numChannels;
 };

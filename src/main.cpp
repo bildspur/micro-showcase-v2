@@ -2,9 +2,9 @@
 #include <inttypes.h>
 
 #include "entity/showCase/ShowCase.h"
-#include "scene/strobeScene/StrobeScene.h"
+#include "scene/strobeScene/WaveScene.h"
 
-int8_t numTubes = 3;
+int8_t numTubes = 7;
 int8_t numChannels = 72;
 
 BaseScene* activeScene = new StrobeScene();

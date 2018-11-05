@@ -6,12 +6,13 @@
 #ifndef BaseScene_H
 #define BaseScene_H
 
+#include <vector>
 #include "entity/tube/Tube.h"
 
 class BaseScene {
     public:
         explicit BaseScene();
-        virtual void render(Tube);
+        virtual void render(std::vector<Tube>);
 };
 
  #endif //BaseScene_H
