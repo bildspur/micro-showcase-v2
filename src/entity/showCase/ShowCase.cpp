@@ -8,8 +8,9 @@
 ShowCase::ShowCase(uint8_t numTubes, uint8_t numTubeChannels, BaseScene* ActiveScene) {
     this->ActiveScene = ActiveScene;
 
-    for(uint8_t numTube = 1; numTube <= numTubes; --numTube) {
-        this->Tubes.push_back(Tube(numTube, numTube*numTubeChannels, numTubeChannels));
+    for(uint8_t numTube = 0; numTube < numTubes; ++numTube) {
+        auto tube = Tube(numTube, (numTube*numTubeChannels)+1, numTubeChannels);
+        this->Tubes.push_back(tube);
     }
 };
 

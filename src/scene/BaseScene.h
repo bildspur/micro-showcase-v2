@@ -12,7 +12,7 @@
 class BaseScene {
     public:
         explicit BaseScene();
-        virtual void render(std::vector<Tube>);
+        virtual void render(std::vector<Tube>&);
 };
 
  #endif //BaseScene_H

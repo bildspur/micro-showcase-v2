@@ -9,15 +9,14 @@
 #include <inttypes.h>
 
 class Tube {
-        uint8_t id,
+        uint16_t id,
                 address,
                 numChannels;
     public:
-        Tube(uint8_t, uint8_t, uint8_t);
-        uint8_t getId(),
+        Tube(uint16_t, uint16_t, uint16_t);
+        uint16_t getId(),
                 getAddress(),
                 getChannelNum();
-    
 };
 
 #endif //TUBE_H

@@ -4,23 +4,23 @@
 
 #include "Tube.h"
 
-Tube::Tube(uint8_t id, uint8_t address, uint8_t numChannels) {
+Tube::Tube(uint16_t id, uint16_t address, uint16_t numChannels) {
     this->id = id;
     this->address = address;
     this->numChannels = numChannels;
 };
 
 //Id
-uint8_t Tube::getId() {
+uint16_t Tube::getId() {
     return this->id;
 };
 
 //Address
-uint8_t Tube::getAddress() {
+uint16_t Tube::getAddress() {
     return this->address;
 };
 
 //Channel Count
-uint8_t Tube::getChannelNum() {
+uint16_t Tube::getChannelNum() {
     return this->numChannels;
 };

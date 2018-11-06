@@ -4,10 +4,11 @@
 #include "entity/showCase/ShowCase.h"
 #include "scene/strobeScene/WaveScene.h"
 
+
 int8_t numTubes = 7;
 int8_t numChannels = 72;
 
-BaseScene* activeScene = new StrobeScene();
+BaseScene* activeScene = new WaveScene();
 auto Installation = ShowCase(numTubes, numChannels, activeScene);
 
 void setup() {
@@ -17,3 +18,4 @@ void setup() {
 void loop() {
     Installation.render();
 }
+

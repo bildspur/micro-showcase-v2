@@ -6,4 +6,4 @@
 
 BaseScene::BaseScene() {};
 
-void BaseScene::render(std::vector<Tube> Tubes) {};
+void BaseScene::render(std::vector<Tube>& Tubes) {};

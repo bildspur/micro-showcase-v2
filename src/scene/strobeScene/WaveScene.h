@@ -10,10 +10,10 @@
 #include <ESPDMX.h>
 #include "scene/BaseScene.h"
 
-class StrobeScene : public BaseScene {
+class WaveScene : public BaseScene {
     public:
-        explicit StrobeScene();
-        void render(std::vector<Tube>) override;
+        explicit WaveScene();
+        void render(std::vector<Tube>&) override;
 };
 
 #endif //WaveScene_H
