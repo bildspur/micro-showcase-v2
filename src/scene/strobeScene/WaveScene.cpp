@@ -7,23 +7,33 @@
 
 DMXESPSerial Dmx;
 
+uint8_t wave [27];
 WaveScene::WaveScene() : BaseScene() {
     Dmx.init(512);
+    for(uint8_t i = 0; i < sizeof(wave); ++i) {
+        wave[i] = i;
+    }
 }
+
 
 void WaveScene::render(std::vector<Tube>& Tubes) {
     BaseScene::render(Tubes);;
-    std::for_each(Tubes.begin(), Tubes.end(),
-        [](Tube tube) {         
-            for(uint16_t chnl = tube.getAddress(); chnl <= tube.getAddress()+tube.getChannelNum(); ++chnl) {
-                Dmx.write(chnl, 255);
-                Dmx.update();
-            }
-             for(uint16_t chnl = tube.getAddress(); chnl <= tube.getAddress()+tube.getChannelNum(); ++chnl) {
-                Dmx.write(chnl, 100);
-                Dmx.update();
-            }
-            delay(100);
+
+    for(uint16_t tubeID = 0; tubeID != Tubes.size(); ++tubeID) {
+        for(uint16_t chnl = 0; chnl < Tubes.at(tubeID).getChannelNum(); ++chnl) { 
+            Dmx.write(Tubes.at(tubeID).getAddress()+chnl, 100);
         }
-    );
+        for(uint8_t i = 0; i < sizeof(wave); ++i) {
+            Dmx.write(Tubes.at(tubeID).getAddress()+wave[i], 255-(i*5));
+        }
+    }
+    Dmx.update();
+    delay(50);
+        for(uint8_t i = 0; i < sizeof(wave); ++i) {
+            if(wave[i]<72) {
+                wave[i] = wave[i]+3;
+            } else {
+                wave[i] = wave[i]-72;
+            }
+        }
 };
